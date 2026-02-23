@@ -15,7 +15,7 @@ contract PropertyManagement {
     constructor (address _tokenAddress) {
         tokenAddress =_tokenAddress;
 
-        paymentToken = IERC20 (_tokenAddress);
+        paymentToken = IERC20(_tokenAddress);
     }
 
    struct  Properties {
@@ -40,7 +40,7 @@ if (msg.sender != owner) {
 
    Properties [] public properties;
    uint propertyId;
-   function buyProperty (string memory _apartmentType, uint _amount, string memory _description ) external returns (bool){
+   function addProperty (string memory _apartmentType, uint _amount, string memory _description ) external returns (bool){
     propertyId =propertyId + 1;
     Properties memory property = Properties ({
         id: propertyId,
@@ -57,13 +57,13 @@ if (msg.sender != owner) {
 
    function buyProperty(uint _id) external {
     require(_id < properties.length, "Property not found");
-   uint indexx = propertyIdToIndex[_id];
+//    uint indexx = propertyIdToIndex[_id];
 for (uint i; i < properties.length; i++){
     if(properties[i].id == _id){
     uint amountToPay = properties[i].amount;
 
-    bool success = paymentToken.TransferFrom(msg.sender, address(this), amountToPay);
-    require (success, "Transaction failed, please try again");
+   bool success = paymentToken.transferFrom(msg.sender,address(this),amountToPay);
+require(success, "Transaction failed");
 
     }
 }
