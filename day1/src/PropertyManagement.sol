@@ -25,11 +25,12 @@ contract PropertyManagement {
     uint amount;
     address OwnerAddress;
     uint timeStamp;
-    
+    bool soldOut;
    }
 
    mapping (uint  => uint) propertyIdToIndex;
    mapping (uint => Properties) propertyDetails;
+   mapping (address => uint) _balances;
    address owner = msg.sender;
 
    modifier  OnlyOwner (){
@@ -48,28 +49,33 @@ if (msg.sender != owner) {
         description: _description,
         amount : _amount,
         OwnerAddress: msg.sender,
-        timeStamp : block.timestamp
+        timeStamp : block.timestamp,
+        soldOut: false
     });
+    propertyIdToIndex[propertyId] = properties.length;
     properties.push(property);
 
     return true;
    }
 
-   function buyProperty(uint _id) external {
-    require(_id < properties.length, "Property not found");
-//    uint indexx = propertyIdToIndex[_id];
-for (uint i; i < properties.length; i++){
-    if(properties[i].id == _id){
-    uint amountToPay = properties[i].amount;
+   function buyProperty(uint _id) external returns(uint){
+       uint index= propertyIdToIndex[_id];
+           require(index < properties.length, "Property not found");
+           require(properties[index].id == _id, "Invalid property");
 
-   bool success = paymentToken.transferFrom(msg.sender,address(this),amountToPay);
+//    address seller =properties[index].OwnerAddress;
+    // if(properties[index].id == _id){
+    require(!properties[index].soldOut, "This property is no longer available");
+    uint amountToPay = properties[index].amount;
+ address OwnerAddress = properties[index].OwnerAddress;
+// 2000000000000000000
+   bool success = paymentToken.transferFrom(msg.sender,OwnerAddress,amountToPay);
 require(success, "Transaction failed");
-
-    }
-}
-
-
+properties[index].soldOut = true;
+return amountToPay;
+    
    }
+
    function removeProperty(uint _id) external OnlyOwner {
     uint indexToRemove = propertyIdToIndex[_id];
     uint lastIndex = properties.length -1;
@@ -83,6 +89,8 @@ require(success, "Transaction failed");
     }
     properties.pop();
     delete propertyIdToIndex[_id];
+
+    // return _
 
    }
 
