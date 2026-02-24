@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import {Script} from "forge-std/Script.sol";
-import {Counter} from "../src/Counter.sol";
+import {HMS} from "../src/HMS.sol";
 
-contract CounterScript is Script {
-    Counter public counter;
+contract HMSScript is Script {
+    HMS public counter;
 
     function setUp() public {}
 
     function run() public {
         vm.startBroadcast();
 
-        counter = new Counter();
+        counter = new HMS();
 
         vm.stopBroadcast();
     }
