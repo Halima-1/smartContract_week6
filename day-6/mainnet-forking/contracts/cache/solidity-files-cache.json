@@ -1,0 +1,152 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/home/halimah/web3bridge/week6/w3b-solidity-cohort/week-2/day-6/mainnet-forking/contracts/UseSwap.sol": {
+      "lastModificationDate": 1772305696228,
+      "contentHash": "a61d2a57199e7afe2d5c508def48ae99",
+      "sourceName": "contracts/UseSwap.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./interfaces/IUniswapV2Router.sol",
+        "./interfaces/IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "UseSwap"
+      ]
+    },
+    "/home/halimah/web3bridge/week6/w3b-solidity-cohort/week-2/day-6/mainnet-forking/contracts/interfaces/IUniswapV2Router.sol": {
+      "lastModificationDate": 1772331230542,
+      "contentHash": "c98492cc7bb581e0e17bae42ffb0026d",
+      "sourceName": "contracts/interfaces/IUniswapV2Router.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.9"
+      ],
+      "artifacts": [
+        "IUniswapV2Router"
+      ]
+    },
+    "/home/halimah/web3bridge/week6/w3b-solidity-cohort/week-2/day-6/mainnet-forking/contracts/interfaces/IERC20.sol": {
+      "lastModificationDate": 1772305696229,
+      "contentHash": "33763a6f1f64a87854f95d32e3fe4b00",
+      "sourceName": "contracts/interfaces/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.17"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/home/halimah/web3bridge/week6/w3b-solidity-cohort/week-2/day-6/mainnet-forking/contracts/interfaces/IERC20Permit.sol": {
+      "lastModificationDate": 1772305696229,
+      "contentHash": "89c3828a470495fb17b5b375b3432089",
+      "sourceName": "contracts/interfaces/IERC20Permit.sol",
+      "solcConfig": {
+        "version": "0.8.24",
+        "settings": {
+          "evmVersion": "paris",
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20Permit"
+      ]
+    }
+  }
+}
